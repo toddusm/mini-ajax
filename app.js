@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('getUsers').on('click', function() {
+	$('#getUsers').on('click', function() {
 		return $.ajax({
 			method: 'GET',
 			url: 'http://reqr.es/api/users?page=1',
@@ -26,7 +26,8 @@ $(document).ready(function(){
     };
   }
   
-  $('#addUser').on('click', function() {
+  $('#addUser').on('click', function(e) {
+    event.preventDefault();
 	  var userName = $('#name').val();
 	  var userJob = $('#job').val();
 	  return $.ajax({
